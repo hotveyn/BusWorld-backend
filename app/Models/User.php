@@ -19,4 +19,10 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($value);
     }
+
+    // Я хз, у меня оно ничего не возвращает, поэтому в контроллере это не использовал
+    public function scopePassenger()
+    {
+        return Passanger::where("document_number", $this->document_number)->first();
+    }
 }
