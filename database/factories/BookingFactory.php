@@ -18,8 +18,8 @@ class BookingFactory extends Factory
     {
         return [
             "code" => fake()->unique()->numberBetween(100000, 1000000),
-            "time_from" => fake()->time(),
-            "time_back" => fake()->time(),
+            "date_from" => fake()->date(),
+            "date_back" => fake()->date(),
         ];
     }
 }

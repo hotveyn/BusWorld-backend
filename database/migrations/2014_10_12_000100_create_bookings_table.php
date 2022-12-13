@@ -19,8 +19,8 @@ return new class extends Migration {
             $table->string("code")->unique();
             $table->foreignId("trip_from")->constrained("trips");
             $table->foreignId("trip_back")->constrained("trips");
-            $table->time("time_from");
-            $table->time("time_back");
+            $table->date("date_from");
+            $table->date("date_back");
             $table->timestamps();
         });
     }
