@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\StationController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::post("login", [UserController::class, "login"]);
+Route::post("register", [UserController::class, "store"]);
+Route::get("station", [StationController::class, "search"]);
+Route::get("trip", [StationController::class, "search"]);
 
 Route::middleware("auth:api")->group(function (){
 
